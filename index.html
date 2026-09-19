@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Zam Zam Biryani | Jaipur</title>
 
 <style>
@@ -11,23 +11,28 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  background:#111;
+  background:#0b0b0b;
   color:white;
 }
 
+/* HEADER */
 header{
-  background:#0b0b0b;
+  background:#080808;
   padding:18px 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
   border-bottom:1px solid #333;
 }
 
@@ -41,100 +46,206 @@ nav a{
   color:white;
   text-decoration:none;
   margin-left:20px;
+  font-weight:bold;
 }
 
+nav a:hover{
+  color:#ffbd00;
+}
+
+/* HERO */
 .hero{
-  min-height:75vh;
+  min-height:88vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:50px 20px;
-  background:linear-gradient(#000b,#000b),url("https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=1600&q=80");
+
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.78)),
+  url("https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=1600&q=80");
+
   background-size:cover;
   background-position:center;
 }
 
+.hero-content{
+  max-width:800px;
+}
+
 .hero h1{
-  font-size:55px;
+  font-size:clamp(45px,8vw,78px);
   color:#ffbd00;
-  margin-bottom:15px;
+  margin-bottom:18px;
+  text-shadow:0 4px 20px #000;
 }
 
-.hero p{
-  font-size:20px;
-  margin-bottom:25px;
+.hero .tagline{
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:12px;
 }
 
+.hero .sub{
+  font-size:18px;
+  color:#ddd;
+  margin-bottom:30px;
+}
+
+/* BUTTONS */
 .btn{
   display:inline-block;
-  padding:13px 25px;
+  padding:14px 27px;
+  margin:6px;
   background:#e53912;
   color:white;
   text-decoration:none;
   border-radius:30px;
   font-weight:bold;
-  margin:5px;
+  transition:.3s;
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+  background:#ff4d1f;
+}
+
+/* SECTIONS */
 section{
-  padding:55px 7%;
+  padding:70px 7%;
   text-align:center;
 }
 
 .title{
-  font-size:34px;
+  font-size:38px;
   color:#ffbd00;
-  margin-bottom:30px;
+  margin-bottom:40px;
+}
+
+/* MENU */
+#menu{
+  background:#101010;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .card{
-  background:#1d1d1d;
-  padding:25px;
-  border-radius:15px;
+  background:linear-gradient(145deg,#202020,#151515);
+  padding:30px 22px;
+  border-radius:18px;
   border:1px solid #333;
+  transition:.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#ffbd00;
 }
 
 .card h3{
   color:#ffbd00;
-  margin-bottom:10px;
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#ccc;
+  line-height:1.6;
 }
 
 .price{
   color:#ff5b25;
-  font-size:20px;
+  font-size:21px;
   font-weight:bold;
+  margin-top:18px;
 }
 
+/* ABOUT */
 .about{
   background:#181818;
 }
 
+.about p{
+  max-width:800px;
+  margin:auto;
+  color:#ddd;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* CONTACT */
 .contact{
   background:#0b0b0b;
 }
 
 .contact p{
-  margin:12px;
-  line-height:1.6;
+  margin:20px auto;
+  line-height:1.7;
+  color:#ddd;
 }
 
-footer{
-  padding:25px;
-  text-align:center;
-  background:#000;
-  color:#aaa;
-}
-
-footer a{
+.contact a:not(.btn){
   color:#ffbd00;
   text-decoration:none;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  padding:28px 15px;
+  text-align:center;
+  background:#000;
+  color:#888;
+  border-top:1px solid #222;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  header{
+    padding:15px 5%;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  nav a{
+    margin-left:10px;
+    font-size:14px;
+  }
+
+  .hero{
+    min-height:82vh;
+  }
+
+  .hero .tagline{
+    font-size:20px;
+  }
+
+  .hero .sub{
+    font-size:16px;
+  }
+
+  section{
+    padding:55px 5%;
+  }
+
+  .title{
+    font-size:30px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -142,27 +253,165 @@ footer a{
 <body>
 
 <header>
+
   <div class="logo">🔥 ZAM-ZAM BIRYANI</div>
+
   <nav>
     <a href="#menu">Menu</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
+
 </header>
 
+
 <section class="hero">
-  <div>
+
+  <div class="hero-content">
+
     <h1>Zam Zam Biryani</h1>
-    <p>The Real Taste of Zam Zam</p>
-    <p>🍗 Delicious Chicken Biryani & Non-Veg Specialities</p>
-    <a class="btn" href="tel:8107085519">📞 Call Now</a>
-    <a class="btn" href="#menu">🍽️ View Menu</a>
+
+    <p class="tagline">
+      The Real Taste of Zam Zam
+    </p>
+
+    <p class="sub">
+      🍗 Delicious Chicken Biryani & Non-Veg Specialities
+    </p>
+
+    <a class="btn" href="tel:8107085519">
+      📞 Call Now
+    </a>
+
+    <a class="btn" href="#menu">
+      🍽️ View Menu
+    </a>
+
   </div>
+
 </section>
 
+
 <section id="menu">
+
   <h2 class="title">Our Special Menu</h2>
 
   <div class="cards">
 
     <div class="card">
-    h
+
+      <h3>🍗 Chicken Biryani</h3>
+
+      <p>
+        Our signature chicken biryani, made with aromatic
+        rice and special spices.
+      </p>
+
+      <div class="price">
+        ₹140 / kg
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>🍗 Chicken Specialities</h3>
+
+      <p>
+        Delicious non-veg dishes prepared with authentic
+        spices and rich flavours.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>🥩 Non-Veg Special</h3>
+
+      <p>
+        Enjoy tasty and freshly prepared non-vegetarian
+        food at Zam Zam Biryani.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>🍬 Sweets</h3>
+
+      <p>
+        Complete your meal with our delicious selection
+        of sweets.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="about" class="about">
+
+  <h2 class="title">
+    Why Zam Zam Biryani?
+  </h2>
+
+  <p>
+    Freshly prepared food, rich flavours and the authentic
+    taste of biryani. Visit Zam Zam Biryani and enjoy a
+    delicious meal with family and friends.
+  </p>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+  <h2 class="title">
+    Visit Us
+  </h2>
+
+  <p>
+    📍 <strong>Address:</strong><br>
+    WPXV+CRQ Zam Zam Biryani, Opposite Bismillah Hotel,<br>
+    Laxmi Nagar III, Jagannath Puri, Sanjay Nagar,<br>
+    Jhotwara Choraha, Jaipur, Rajasthan 302012
+  </p>
+
+  <p>
+    🕐 <strong>Opening Hours:</strong><br>
+    7:00 AM – 11:00 PM
+  </p>
+
+  <p>
+    📞 <strong>Phone:</strong><br>
+
+    <a class="btn" href="tel:8107085519">
+      81070 85519
+    </a>
+  </p>
+
+  <p>
+    📸 <strong>Instagram:</strong><br>
+
+    <a href="https://instagram.com/zam_zambiryani01"
+       target="_blank">
+      @zam_zambiryani01
+    </a>
+  </p>
+
+</section>
+
+
+<footer>
+
+  © 2026 Zam Zam Biryani | The Real Taste of Zam Zam
+
+</footer>
+
+</body>
+</html>
